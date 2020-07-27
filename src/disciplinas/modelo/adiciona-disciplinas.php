@@ -16,8 +16,17 @@ if ($disciplina == "") {
     //Testar o comando SQL no banco de dados
     //Query = linha de comando no BD
     if (mysqli_query($conecta, $sql)) {
-        echo "Dados cadastrados com sucesso!";
+        $dados = array(
+            'tipo' => 'alert-success',
+            'mensagem' => 'Dados cadastrados com sucesso!'
+        );
+
     }else {
-        echo "Deu ruim no cadastro";
+        $dados = array(
+            'tipo' => 'alert-danger',
+            'mensagem' => 'Ocorreu um erro no momento do cadastro'
+        );
+
     }
 }
+echo json_encode($dados);
