@@ -8,6 +8,7 @@ function closeForm() {
 
         //Depois iremos ocultar a DIV
         $('#form').hide()
+        $('.row').show()
     })
 }
 
@@ -29,21 +30,22 @@ $(document).ready(function() {
             url: 'src/disciplinas/modelo/view-disciplinas.php',
             success: function(dados) {
                 $('#form').show()
+                $('.row').hide()
 
                 //Carregando nosso formulário dentro da DIV que deixamos em branco pra mostrar os dados
                 $('#form').load('src/disciplinas/visao/adiciona-disciplinas.html', function() {
-                    //$('.btn-save').after('<button class="btn btn-success btn-block btn-save"><i class="mdi mdi-content-save"></i> Salvar alterações</button>')
-                    // $('.btn-save').hide()
+                    $('.btn-save').after('<button class="btn btn-secondary btn-block btn-close"><i class="mdi mdi-close"></i>Fechar</button>')
+                    $('.btn-save').addClass('btn-update').removeClass('btn-save')
                     $('h2').empty()
-                    $('h2').append('Editar Cadastro')
+                    $('h2').append('Edição Cadastro')
                     $('#disciplina').val(dados[0].disciplina)
-                        //$('#disciplina').attr('disabled', true)
                     $('#professor').val(dados[0].professor)
-                        //$('#professor').attr('disabled', true)
+                    $('#professor').after(`<input type="hidden" name="id" id="id" value="${dados[0].id}">`)
 
-                    // closeForm()
+                    closeForm()
 
                 })
+                $('body').append('<script src="src/disciplinas/controle/atualiza-disciplinas.js"></script>')
             }
         })
     })

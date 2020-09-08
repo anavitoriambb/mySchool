@@ -8,9 +8,9 @@ function closeForm() {
 
         //Depois iremos ocultar a DIV
         $('#form').hide()
+        $('.row').show()
     })
 }
-
 $(document).ready(function() {
 
     //Monitorar o clique em cima dos botões com a classe btn-view
@@ -29,6 +29,7 @@ $(document).ready(function() {
             url: 'src/disciplinas/modelo/view-disciplinas.php',
             success: function(dados) {
                 $('#form').show()
+                $('.row').hide()
 
                 //Carregando nosso formulário dentro da DIV que deixamos em branco pra mostrar os dados
                 $('#form').load('src/disciplinas/visao/adiciona-disciplinas.html', function() {

@@ -12,7 +12,7 @@ $resultado = mysqli_query($conecta, $sql);
 if ($resultado && mysqli_num_rows($resultado) > 0) {
     #Associar os registros encontrados em um array
     while ($linha = mysqli_fetch_assoc($resultado)) {
-        $dados[] = array_map(/* null*/'utf8_encode', $linha);
+        $dados[] = array_map( null /*'utf8_encode'*/, $linha);
     }
 }else {
         $dados = array('erro' => "Não foi possível buscar resultado algum");
