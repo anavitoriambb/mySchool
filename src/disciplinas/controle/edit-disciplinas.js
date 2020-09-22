@@ -7,8 +7,8 @@ function closeForm() {
         $('#form').empty()
 
         //Depois iremos ocultar a DIV
-        $('#form').hide()
-        $('.row').show()
+        $('#form').hide(1000)
+        $('.row').show(1000)
     })
 }
 
@@ -29,8 +29,8 @@ $(document).ready(function() {
             data: dados,
             url: 'src/disciplinas/modelo/view-disciplinas.php',
             success: function(dados) {
-                $('#form').show()
-                $('.row').hide()
+                $('#form').show(1000)
+                $('.row').hide(1000)
 
                 //Carregando nosso formulário dentro da DIV que deixamos em branco pra mostrar os dados
                 $('#form').load('src/disciplinas/visao/adiciona-disciplinas.html', function() {
