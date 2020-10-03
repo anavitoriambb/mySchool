@@ -3,7 +3,7 @@
 include('../../conexao/conn.php');
 
 //Criar uma consulta ao banco de dados para listar as informações existentes
-$sql = "SELECT * FROM disciplinas WHERE id = ".$_REQUEST['id']."";
+$sql = "SELECT * FROM alunos WHERE id = ".$_REQUEST['id']."";
 
 //Estamos executando nossa query
 $resultado = mysqli_query($conecta, $sql);
