@@ -5,6 +5,8 @@ include('../../conexao/conn.php');
 
 $disciplina = $_REQUEST['disciplina'];
 $professor = $_REQUEST['professor'];
+$nota = $_REQUEST['nota'];
+$id_alunos = $_REQUEST['id_alunos'];
 $id = $_REQUEST['id'];
 
 //Só o nome da disciplina vai ser obrigatória o nome do prof não
@@ -13,7 +15,7 @@ if ($disciplina == "") {
     echo "O campo com o nome da disciplina não pode estar vazio, tente novamente";
 }else{
     //Gerar um script SQL para cadastro de informações no banco de dados, em parentese os campos e values é os valores
-    $sql = "UPDATE disciplinas SET disciplina = '".$disciplina."', professor = '".$professor."' WHERE id = ".$id."";
+    $sql = "UPDATE disciplinas SET disciplina = '".$disciplina."', professor = '".$professor."', nota = '".$nota."', id_alunos = '".$id_alunos."' WHERE id = ".$id."";
     //Testar o comando SQL no banco de dados
     //Query = linha de comando no BD
     if (mysqli_query($conecta, $sql)) {
