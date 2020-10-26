@@ -18,3 +18,4 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
         $dados = array('erro' => "Não foi possível buscar resultado algum");
     }
     echo json_encode($dados);
+//Olá 
