@@ -3,10 +3,12 @@
 //require_once é o memso que include
 include('../../conexao/conn.php');
 
+session_start();
+
 $disciplina = $_REQUEST['disciplina'];
 $professor = $_REQUEST['professor'];
 $nota = $_REQUEST['nota'];
-$id_alunos = $_REQUEST['id_alunos'];
+$id_alunos = $_SESSION['id'];
 $id = $_REQUEST['id'];
 
 //Só o nome da disciplina vai ser obrigatória o nome do prof não

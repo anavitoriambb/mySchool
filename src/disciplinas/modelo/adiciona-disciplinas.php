@@ -6,7 +6,9 @@ include('../../conexao/conn.php');
 $disciplina = $_REQUEST['disciplina'];
 $professor = $_REQUEST['professor'];
 $nota = $_REQUEST['nota'];
-//$id_alunos = $_REQUEST['id_alunos']; Somente será possível depois do login
+
+session_start();
+$id_alunos = $_SESSION['id'];
 
 //Só o nome da disciplina vai ser obrigatória o nome do prof não
 //isso é uma validação
